@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Karim – Développeur Web & Expert Automatisation</title>
+
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- SVG Definitions -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <symbol id="icon-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></symbol>
+    <symbol id="icon-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></symbol>
+    <symbol id="icon-academic-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c0 1.66 4 3 6 3s6-1.34 6-3v-5"></path></symbol>
+    <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5L3 21M14.5 9.5L21 3M12 2L9.5 9.5L2 12l7.5 2.5L12 22l2.5-7.5L22 12l-7.5-2.5L12 2z"></path></symbol>
+    <symbol id="icon-chevron-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></symbol>
+    <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></symbol>
+    <symbol id="icon-document-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"></path><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"></path><path d="M12 17v-6"></path><path d="m15 14-3 3-3-3"></path></symbol>
+    <symbol id="icon-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></symbol>
+  </svg>
+
+  <button id="downloadPdf" class="pdf-btn" type="button" aria-label="Télécharger le CV en PDF">
+    <svg class="icon-svg" aria-hidden="true"><use xlink:href="#icon-document-download"></use></svg>
+    <span>Télécharger PDF</span>
+  </button>
+
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="header-content-wrapper">
+        <div class="header-info">
+          <h1>Karim</h1>
+          <div class="header-subtitle">Développer Web & Automatisation</div>
+          <!-- Contact info kept from Karim example, user can specify if this needs to change -->
+          <div class="contact-info" role="list">
+            <div class="contact-item" role="listitem">
+                <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-mail"></use></svg>
+                <a href="mailto:karim4250@gmail.com" aria-label="Envoyer un email">karim4250@gmail.com</a>
+            </div>
+            <div class="contact-item" role="listitem">
+              <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-phone"></use></svg>
+              <span>514-123-4567</span>
+            </div>
+            <div class="contact-item" role="listitem">
+              <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-globe"></use></svg>
+              <span>Français / Anglais</span>
+            </div>
+          </div>
+        </div>
+        <div class="avatar" aria-hidden="true">K</div>
+      </div>
+    </header>
+
+    <div class="main-grid">
+      <main class="main-content" role="main">
+        <section class="section-card" id="profil-rich" aria-labelledby="profil-title-rich">
+          <div class="section-card-header">
+            <h2 class="section-title" id="profil-title-rich">
+              <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-user"></use></svg>
+              <span>Profil</span>
+            </h2>
+          </div>
+          <div class="section-card-content">
+            <p class="profile-text" id="profile-text-rich">
+              Développeur spécialisé en automatisation web, sécurité applicative et optimisation de performances. Conception de frameworks scalables garantissant la continuité des processus métiers, développement de plateformes de documentation intelligente et d’applications mobiles collaboratives. Rigoureux, orienté résultats et passionné par l’innovation.
+            </p>
+          </div>
+        </section>
+
+        <section class="section-card" id="experience-rich" aria-labelledby="experience-title-rich">
+          <div class="section-card-header">
+            <h2 class="section-title" id="experience-title-rich">
+              <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-briefcase"></use></svg>
+              <span>Expérience Professionnelle</span>
+            </h2>
+          </div>
+          <div class="section-card-content">
+            <div class="experience-item">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Développeur Web</h3>
+                  <div class="experience-company">Freelance</div>
+                </div>
+                <div class="experience-date">2024 – Présent</div>
+              </div>
+              <ul class="experience-list">
+                <li>Développement sur mesure d’applications web et mobile et automatisation de processus, avec amélioration de la productivité de 50 à 80 %</li>
+                <li>Conception d’architectures sécurisées, performantes et évolutives</li>
+              </ul>
+            </div>
+            <div class="experience-item">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Souscripteur Intermédiaire</h3>
+                  <div class="experience-company">CAA Assurance</div>
+                </div>
+                <div class="experience-date">2019 – 2023</div>
+              </div>
+              <ul class="experience-list">
+                <li>Gestion d’un portefeuille d’assurance de plus de 2 M$ : évaluation des risques et tarification</li>
+                <li>Collaboration avec les courtiers, garantie de conformité réglementaire et analyses de marché</li>
+              </ul>
+            </div>
+            <div class="experience-item">
+              <div class="experience-header">
+                <div>
+                  <h3 class="experience-title">Adjoint Souscription</h3>
+                  <div class="experience-company">Economical Insurance</div>
+                </div>
+                <div class="experience-date">2015 – 2018</div>
+              </div>
+              <ul class="experience-list">
+                <li>Supervision opérationnelle des dossiers d’assurance et optimisation des workflows</li>
+              </ul>
+            </div>
+            <details>
+              <summary aria-controls="additional-experiences" aria-expanded="false">
+                <span class="summary-chevron"><svg class="icon-svg" aria-hidden="true"><use xlink:href="#icon-chevron-right"></use></svg></span>
+                <span>Voir les expériences antérieures</span>
+              </summary>
+              <div class="details-content" id="additional-experiences">
+                <div class="experience-item">
+                  <div class="experience-header">
+                    <div><h3 class="experience-title">Serveur</h3><div class="experience-company">La Clandestine Bistro</div></div>
+                    <div class="experience-date">2014 - 2015</div>
+                  </div>
+                  <ul class="experience-list">
+                    <li>Coordination service/cuisine; gestion périodes de pointe.</li>
+                    <li>Soutien aux équipes, satisfaction clientèle.</li>
+                  </ul>
+                </div>
+                <div class="experience-item">
+                  <div class="experience-header">
+                    <div><h3 class="experience-title">Préposé</h3><div class="experience-company">Buanderie Blanchelle</div></div>
+                    <div class="experience-date">2012 - 2014</div>
+                  </div>
+                  <ul class="experience-list">
+                    <li>Traitement linge hospitalier (tri, traitement, distribution).</li>
+                    <li>Respect normes d'hygiène; optimisation efficacité.</li>
+                  </ul>
+                </div>
+              </div>
+            </details>
+          </div>
+        </section>
+
+        <section class="section-card" id="formation-rich" aria-labelledby="formation-title-rich">
+            <div class="section-card-header">
+              <h2 class="section-title" id="formation-title-rich">
+                <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-academic-cap"></use></svg>
+                <span>Formation</span>
+              </h2>
+            </div>
+            <div class="section-card-content">
+              <div class="education-item">
+                <div>
+                  <div class="education-degree">A.E.C. Assurance de Dommages</div>
+                  <div class="education-school">Cégep du Vieux-Montréal</div>
+                </div>
+                <div class="education-date-range">2014-2015</div>
+              </div>
+              <div class="education-item">
+                <div>
+                  <div class="education-degree">D.E.C. Techniques Informatique</div>
+                  <div class="education-school">Cégep du Vieux-Montréal</div>
+                </div>
+                <div class="education-date-range">2011-2014</div>
+              </div>
+              <div class="education-item">
+                <div>
+                  <div class="education-degree">D.E.S. Études Internationales</div>
+                  <div class="education-school">École Jean-Baptiste-Meilleur</div>
+                </div>
+                <div class="education-date-range">2006-2011</div>
+              </div>
+            </div>
+        </section>
+      </main>
+
+      <aside class="sidebar" role="complementary">
+        <section class="section-card" id="competences-rich" aria-labelledby="competences-title-rich">
+            <div class="section-card-header">
+              <h2 class="section-title" id="competences-title-rich">
+                <svg class="icon-svg icon-print-visible" aria-hidden="true"><use xlink:href="#icon-sparkles"></use></svg>
+                <span>Compétences Techniques</span>
+              </h2>
+            </div>
+            <div class="section-card-content">
+              <div class="skills-grid">
+                <div class="skill-category">
+                  <h3 class="skill-category-title">Langages Clés</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag" tabindex="0">Python</span><span class="skill-tag" tabindex="0">JavaScript</span><span class="skill-tag" tabindex="0">HTML/CSS</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3 class="skill-category-title">Frameworks & Librairies</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag" tabindex="0">React</span><span class="skill-tag" tabindex="0">React Native</span><span class="skill-tag" tabindex="0">Node.js</span><span class="skill-tag" tabindex="0">Flask</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3 class="skill-category-title">Outils & DevOps</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag" tabindex="0">Git</span><span class="skill-tag" tabindex="0">Linux</span><span class="skill-tag" tabindex="0">Selenium</span><span class="skill-tag" tabindex="0">GitHub Actions</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3 class="skill-category-title">Données & API</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag" tabindex="0">SQLite</span><span class="skill-tag" tabindex="0">Pandas</span><span class="skill-tag" tabindex="0">API REST</span>
+                  </div>
+                </div>
+                <div class="skill-category">
+                  <h3 class="skill-category-title">Cloud & Spécialités</h3>
+                  <div class="skill-tags">
+                    <span class="skill-tag" tabindex="0">Firebase</span><span class="skill-tag" tabindex="0">Automatisation</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+      </aside>
+    </div>
+  </div> <!--! Closing .container -->
+
+  <footer class="page-footer" role="contentinfo">
+    <p>© <span id="currentYear">2025</span> Tout droit réservé </span></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const downloadBtn = document.getElementById('downloadPdf');
+      const originalBtnText = downloadBtn.querySelector('span').textContent;
+      const loadingText = 'Génération...';
+
+      const getText = (selector, parent = document) => parent.querySelector(selector)?.textContent.trim() || '';
+      
+      function extractDataForPdf() {
+          const data = {
+              name: getText('.header-info h1'), // Should be Karim
+              title: getText('.header-subtitle'), // Should be Développer Web & Automatisation
+              contactLine: `📧 karim4250@gmail.com | 📱 438-540-2422 | 🌐 Français/Anglais`, // Kept as example
+              profile: getText('#profile-text-rich').replace(/\s+/g, ' '),
+              skills: [],
+              realisations: [], 
+              experience: [],
+              education: []
+          };
+
+          document.querySelectorAll('#competences-rich .skill-category').forEach(cat => {
+              const title = getText('.skill-category-title', cat);
+              const tags = Array.from(cat.querySelectorAll('.skill-tags .skill-tag')).map(tag => tag.textContent.trim()).join(', ');
+              if (title && tags) {
+                  data.skills.push({ title, tags });
+              }
+          });
+
+          const experienceItemsRich = document.querySelectorAll('#experience-rich > .section-card-content > .experience-item, #experience-rich details .experience-item');
+          experienceItemsRich.forEach(item => {
+              const jobTitle = getText('.experience-title', item);
+              const company = getText('.experience-company', item);
+              const date = getText('.experience-date', item).replace(/\s*-\s*/g, ' – ');
+              const responsibilities = Array.from(item.querySelectorAll('.experience-list li')).map(li => li.textContent.trim().replace(/\s+/g, ' '));
+              if (jobTitle && company && date && responsibilities.length > 0) {
+                   data.experience.push({ jobTitle, company, date, responsibilities });
+              }
+          });
+          data.experience = data.experience.slice(0, 3); 
+          
+          document.querySelectorAll('#formation-rich .education-item').forEach(item => {
+              const degree = getText('.education-degree', item);
+              const school = getText('.education-school', item);
+              const dateRange = getText('.education-date-range', item).replace(/\s*-\s*/g, ' – ');
+              if (degree && school && dateRange) {
+                  data.education.push({ degree, school, dateRange });
+              }
+          });
+          return data;
+      }
+
+      function generatePdfHtmlContent(data) {
+          let html = `
+              <html>
+              <head>
+                  <meta charset="UTF-8">
+                  <style>
+                      body { font-family: 'Inter', Arial, sans-serif; font-size: 10pt; line-height: 1.4; color: #000; margin: 0.65in; background-color: #fff; }
+                      h1 { font-family: 'Inter', Arial, sans-serif; font-size: 20pt; font-weight: bold; margin-bottom: 0.05in; padding: 0; text-align: center; }
+                      .title-pdf { font-family: 'Inter', Arial, sans-serif; font-size: 11pt; font-weight: 500; margin-bottom: 0.1in; padding: 0; text-align: center; }
+                      .contact-line-pdf { font-family: 'Inter', Arial, sans-serif; font-size: 9.5pt; margin-bottom: 0.25in; padding: 0; text-align: center; color: #333; }
+                      h2 { font-family: 'Inter', Arial, sans-serif; font-size: 13pt; font-weight: bold; margin-top: 0.25in; margin-bottom: 0.1in; padding: 0; border-bottom: 1px solid #ccc; padding-bottom: 0.05in; }
+                      p { margin-bottom: 0.1in; padding: 0; text-align: justify; }
+                      ul { padding-left: 0.2in; list-style-type: disc; margin-top: 0.05in; margin-bottom: 0.1in; }
+                      li { margin-bottom: 0.05in; padding-left: 0.05in; }
+                      strong { font-weight: bold; }
+                      em { font-style: italic; }
+                      .section-block { margin-bottom: 0.15in; page-break-inside: avoid; }
+                      .job-heading strong, .edu-heading strong { font-size: 10.5pt; }
+                      .job-heading em, .job-heading .date, .edu-heading .school, .edu-heading .date  { font-size: 9.5pt; color: #444; }
+                      .job-heading .date, .edu-heading .date { float: right; }
+                      .skills-list-pdf { padding-left: 0; list-style-type: none; }
+                      .skills-list-pdf li { margin-bottom: 0.04in; }
+                  </style>
+              </head>
+              <body>
+                  <h1>${data.name}</h1>
+                  <p class="title-pdf">${data.title}</p>
+                  <p class="contact-line-pdf">${data.contactLine}</p>
+                  
+                  <h2>Profil</h2>
+                  <div class="section-block"><p>${data.profile}</p></div>`;
+
+          if (data.skills.length > 0) {
+            html += `<h2>Compétences Techniques</h2> <div class="section-block"><ul class="skills-list-pdf">`;
+            data.skills.forEach(skillCat => { html += `<li><strong>${skillCat.title}:</strong> ${skillCat.tags}</li>`; });
+            html += `</ul></div>`;
+          }
+          
+          if (data.experience.length > 0) {
+            html += `<h2>Expérience Professionnelle</h2>`;
+            data.experience.forEach(exp => {
+                html += `
+                    <div class="section-block">
+                        <p class="job-heading"><strong>${exp.jobTitle}</strong> | <em>${exp.company}</em> <span class="date">${exp.date}</span></p>
+                        <ul>`;
+                exp.responsibilities.forEach(item => { html += `<li>${item}</li>`; });
+                html += `
+                        </ul>
+                    </div>`;
+            });
+          }
+
+          if (data.education.length > 0) {
+            html += `<h2>Formation</h2>`;
+            data.education.forEach(edu => {
+                html += `
+                    <div class="section-block">
+                        <p class="edu-heading"><strong>${edu.degree}</strong><br>
+                        <span class="school">${edu.school}</span> <span class="date">${edu.dateRange}</span></p>
+                    </div>`;
+            });
+          }
+          html += `
+              </body>
+              </html>`;
+          return html;
+      }
+
+      downloadBtn.addEventListener('click', async () => {
+        downloadBtn.querySelector('span').textContent = loadingText;
+        downloadBtn.disabled = true;
+
+        try {
+          const pdfData = extractDataForPdf();
+          const htmlStringForPdf = generatePdfHtmlContent(pdfData);
+
+          const options = {
+            margin: [0.65, 0.65, 0.65, 0.65], 
+            filename: `CV_2025.pdf`, // Updated filename
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: {
+              scale: 2, useCORS: true, logging: false,
+              backgroundColor: '#ffffff'
+            },
+            jsPDF: {
+              unit: 'in', format: 'letter', orientation: 'portrait'
+            },
+            pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+          };
+          await html2pdf().from(htmlStringForPdf).set(options).save();
+
+        } catch (error) {
+          console.error('Erreur lors de la génération du PDF:', error);
+          alert('Une erreur est survenue lors de la génération du PDF. Veuillez réessayer.');
+        } finally {
+          downloadBtn.querySelector('span').textContent = originalBtnText;
+          downloadBtn.disabled = false;
+        }
+      });
+
+      const animatedElements = document.querySelectorAll('.section-card, .header');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.05, rootMargin: "0px 0px -20px 0px" });
+
+        animatedElements.forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(10px)';
+          el.style.transition = `opacity 300ms var(--transition-ease), transform 300ms var(--transition-ease)`;
+          observer.observe(el);
+        });
+      } else {
+        animatedElements.forEach(el => {
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+      }
+      
+      document.querySelectorAll('details').forEach(detail => {
+        const summary = detail.querySelector('summary');
+        if (summary) {
+            summary.setAttribute('aria-expanded', detail.hasAttribute('open'));
+            detail.addEventListener('toggle', () => {
+                summary.setAttribute('aria-expanded', detail.hasAttribute('open'));
+            });
+        }
+      });
+
+      const yearSpan = document.getElementById('currentYear');
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear(); // This will set it to current year, but footer text is hardcoded to 2025
+      }
+    });
+  </script>
+</body>
+</html>
